@@ -4,7 +4,7 @@
  var respuesta = "";
  var buena = 0;
  var mala = 0;
-
+let malucas = [];
 
  function contarLineas() {
      var textarea = document.getElementById('txtArea');
@@ -145,12 +145,15 @@
  }
  var malas = function() {
      if (bandera == "A") {
+         malucas[mala] = pregunta;
          mala = mala + 1;
          document.getElementById("vermalas").innerHTML = "Malas : " + mala;
+         document.getElementById("malucas").innerHTML = malucas;
          bandera = "B";
      };
  }
 
  window.onbeforeunload = function(e) {
      return '¿ Quieres salir?';
+
  };
