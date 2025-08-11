@@ -53,7 +53,7 @@ let malucas = [];
      var linea5 = lineas[lineaDeseada - 6]
      var linea6 = lineas[lineaDeseada - 5]
      var linea7 = lineas[lineaDeseada - 4];
-     document.getElementById('parra1').textContent = linea1;
+     document.getElementById('parra1').textContent = "pregunta ("  + pregunta + "): "+ linea1;
      document.getElementById('parra2').textContent = linea2;
      document.getElementById('parra3').textContent = linea3;
      document.getElementById('parra4').textContent = linea4;
@@ -157,3 +157,4 @@ let malucas = [];
      return '¿ Quieres salir?';
 
  };
+
