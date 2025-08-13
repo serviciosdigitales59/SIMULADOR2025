@@ -28,6 +28,7 @@ let malucas = [];
      if (pregunta > ultima) { alert('Terminó el tema de estudio'); } else {
          copiarLinea();
          bandera = "A";
+       detenerlectura();
      };
  }
 
@@ -36,6 +37,7 @@ let malucas = [];
          pregunta = pregunta - 1;
          copiarLinea();
          bandera = "A";
+       detenerlectura();
      }
  }
 
@@ -205,6 +207,7 @@ function detenerlectura() {
 }
 
 ;
+
 
 
 
