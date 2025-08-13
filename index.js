@@ -199,6 +199,12 @@ let malucas = [];
     // Cancelar si ya hay algo hablando
     speechSynthesis.cancel();
     leerSiguiente();
-};
+}
+function detenerlectura() {
+    speechSynthesis.cancel();
+}
+
+;
+
 
 
