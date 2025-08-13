@@ -156,5 +156,49 @@ let malucas = [];
  window.onbeforeunload = function(e) {
      return '¿ Quieres salir?';
 
- };
+ }
+  
+   function leerparrafos() {
+    const etiquetas = [
+        "",
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D",
+        "Alternativa E"
+    ];
+
+    const parrafos = document.querySelectorAll("p");
+    const frases = [];
+
+    for (let i = 0; i < 6 && i < parrafos.length; i++) {
+        const texto = parrafos[i].textContent.trim();
+        if (texto) {
+            frases.push(etiquetas[i]); // etiqueta antes
+            frases.push(texto);        // contenido del párrafo
+        }
+    }
+
+    if (frases.length === 0) {
+        alert("No hay párrafos para leer.");
+        return;
+    }
+
+    let idx = 0;
+    function leerSiguiente() {
+        if (idx >= frases.length) return;
+        let utterance = new SpeechSynthesisUtterance(frases[idx]);
+        utterance.lang = "es-ES";
+        utterance.onend = function() {
+            idx++;
+            leerSiguiente();
+        };
+        speechSynthesis.speak(utterance);
+    }
+
+    // Cancelar si ya hay algo hablando
+    speechSynthesis.cancel();
+    leerSiguiente();
+};
+
 
