@@ -205,7 +205,21 @@ let malucas = [];
 function detenerlectura() {
     speechSynthesis.cancel();
 }
-
+ function micheck(check) {
+    const parrafo = document.getElementById("respuesta");
+    
+   if (check.checked) {
+        
+      alert("El checkbox está ACTIVADO - Está en modo repaso, se mostrarán las respuestas✅");
+       parrafo.hidden = false;
+        
+    } else {
+       
+      alert("El checkbox está DESACTIVADO - Está en modo exámen❌");
+       parrafo.hidden = true;
+    
+           }
+  }
 ;
 
 
