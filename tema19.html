@@ -40,6 +40,7 @@
     </div>
     <center>
         <h3><u>Tema N° 19 : Ley 32130 - Ley que Modifica Código Procesal Penal  (2661 - 2750)</u></h3><br>
+		<input type="checkbox" id="evaluarcheck" onchange="micheck(this)">repasar (ver respuestas)---
 		 <button onclick="leerparrafos()"> - MODO AUDIO - </button>
         <button onclick="detenerlectura()"> - NO AUDIO - </button>
     </center>
@@ -144,7 +145,7 @@
         </p>
     </div>
     <div>
-        <p id="respuesta" hidden="none"></p>
+        <p id="respuesta" hidden></p>
         <p id="seleccion"></p>
         <p id="verbandera"></p>
         <textarea id="txtArea" cols="50" hidden="none">
