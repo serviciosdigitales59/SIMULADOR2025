@@ -4,7 +4,9 @@
  var respuesta = "";
  var buena = 0;
  var mala = 0;
+ var lectura = 0;
 let malucas = [];
+let miCheckbox; 
 
  function contarLineas() {
      var textarea = document.getElementById('txtArea');
@@ -28,7 +30,7 @@ let malucas = [];
      if (pregunta > ultima) { alert('Terminó el tema de estudio'); } else {
          copiarLinea();
          bandera = "A";
-       detenerlectura();
+         detenerlectura();
      };
  }
 
@@ -37,7 +39,7 @@ let malucas = [];
          pregunta = pregunta - 1;
          copiarLinea();
          bandera = "A";
-       detenerlectura();
+          detenerlectura();
      }
  }
 
@@ -55,6 +57,7 @@ let malucas = [];
      var linea5 = lineas[lineaDeseada - 6]
      var linea6 = lineas[lineaDeseada - 5]
      var linea7 = lineas[lineaDeseada - 4];
+     
      document.getElementById('parra1').textContent = "pregunta ("  + pregunta + "): "+ linea1;
      document.getElementById('parra2').textContent = linea2;
      document.getElementById('parra3').textContent = linea3;
@@ -91,46 +94,46 @@ let malucas = [];
      switch (valor) {
          case "A":
              if (respuesta == "A") {
-                 imag1.src = 'img/bien.jpg';
+                 imag1.src = 'img/buena.png';
                  buenas();
              } else {
-                 imag1.src = 'img/mal.jpg';
+                 imag1.src = 'img/mala.png';
                  malas();
              }
              break;
          case "B":
              if (respuesta == "B") {
-                 imag2.src = 'img/bien.jpg';
+                 imag2.src = 'img/buena.png';
                  buenas();
              } else {
-                 imag2.src = 'img/mal.jpg';
+                 imag2.src = 'img/mala.png';
                  malas();
              }
              break;
          case "C":
              if (respuesta == "C") {
-                 imag3.src = 'img/bien.jpg';
+                 imag3.src = 'img/buena.png';
                  buenas();
              } else {
-                 imag3.src = 'img/mal.jpg';
+                 imag3.src = 'img/mala.png';
                  malas();
              }
              break;
          case "D":
              if (respuesta == "D") {
-                 imag4.src = 'img/bien.jpg';
+                 imag4.src = 'img/buena.png';
                  buenas();
              } else {
-                 imag4.src = 'img/mal.jpg';
+                 imag4.src = 'img/mala.png';
                  malas();
              }
              break;
          case "E":
              if (respuesta == "E") {
-                 imag5.src = 'img/bien.jpg';
+                 imag5.src = 'img/buena.png';
                  buenas();
              } else {
-                 imag5.src = 'img/mal.jpg';
+                 imag5.src = 'img/mala.png';
                  malas();
              }
              break;
@@ -159,8 +162,8 @@ let malucas = [];
      return '¿ Quieres salir?';
 
  }
-  
-   function leerparrafos() {
+ 
+ function leerparrafos() {
     const etiquetas = [
         "",
         "Alternativa A",
@@ -202,9 +205,12 @@ let malucas = [];
     speechSynthesis.cancel();
     leerSiguiente();
 }
+
+
 function detenerlectura() {
     speechSynthesis.cancel();
 }
+ 
  function micheck(check) {
     const parrafo = document.getElementById("respuesta");
     
@@ -220,8 +226,4 @@ function detenerlectura() {
     
            }
   }
-;
-
-
-
-
+   ;
