@@ -1,5 +1,5 @@
-const SUPABASE_URL = "https://TU_PROYECTO.supabase.co";
-const SUPABASE_ANON_KEY = "TU_API_KEY_ANONIMA_AQUÍ";
+const SUPABASE_URL = "https://voywguvexvpgstnluhfi.supabase.co/rest/v1/"; 
+const SUPABASE_ANON_KEY = "sb_secret_ykFOheX_nn7KY2lheYyFIQ_idUzX5c8";
 
 // 2. Inicializar el cliente de Supabase
 const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
