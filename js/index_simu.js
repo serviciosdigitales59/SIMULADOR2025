@@ -107,46 +107,46 @@ indice=0;
      switch (valor) {
          case "A":
              if (respuesta == "A") {
-                 imag1.src = 'img/bien.jpg';
+                 imag1.src = 'img/buena.png';
                  buenas();
              } else {
-                 imag1.src = 'img/mal.jpg';
+                 imag1.src = 'img/mala.png';
                  malas();
              }
              break;
          case "B":
              if (respuesta == "B") {
-                 imag2.src = 'img/bien.jpg';
+                 imag2.src = 'img/buena.png';
                  buenas();
              } else {
-                 imag2.src = 'img/mal.jpg';
+                 imag2.src = 'img/mala.png';
                  malas();
              }
              break;
          case "C":
              if (respuesta == "C") {
-                 imag3.src = 'img/bien.jpg';
+                 imag3.src = 'img/buena.png';
                  buenas();
              } else {
-                 imag3.src = 'img/mal.jpg';
+                 imag3.src = 'img/mala.png';
                  malas();
              }
              break;
          case "D":
              if (respuesta == "D") {
-                 imag4.src = 'img/bien.jpg';
+                 imag4.src = 'img/buena.png';
                  buenas();
              } else {
-                 imag4.src = 'img/mal.jpg';
+                 imag4.src = 'img/mala.png';
                  malas();
              }
              break;
          case "E":
              if (respuesta == "E") {
-                 imag5.src = 'img/bien.jpg';
+                 imag5.src = 'img/buena.png';
                  buenas();
              } else {
-                 imag5.src = 'img/mal.jpg';
+                 imag5.src = 'img/mala.png';
                  malas();
              }
              break;
