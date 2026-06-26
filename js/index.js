@@ -4,7 +4,9 @@
  var respuesta = "";
  var buena = 0;
  var mala = 0;
-
+ var lectura = 0;
+let malucas = [];
+let miCheckbox; 
 
  function contarLineas() {
      var textarea = document.getElementById('txtArea');
@@ -28,6 +30,7 @@
      if (pregunta > ultima) { alert('Terminó el tema de estudio'); } else {
          copiarLinea();
          bandera = "A";
+         detenerlectura();
      };
  }
 
@@ -36,6 +39,7 @@
          pregunta = pregunta - 1;
          copiarLinea();
          bandera = "A";
+          detenerlectura();
      }
  }
 
@@ -53,7 +57,8 @@
      var linea5 = lineas[lineaDeseada - 6]
      var linea6 = lineas[lineaDeseada - 5]
      var linea7 = lineas[lineaDeseada - 4];
-     document.getElementById('parra1').textContent = linea1;
+     
+     document.getElementById('parra1').textContent = "pregunta ("  + pregunta + "): "+ linea1;
      document.getElementById('parra2').textContent = linea2;
      document.getElementById('parra3').textContent = linea3;
      document.getElementById('parra4').textContent = linea4;
@@ -145,12 +150,80 @@
  }
  var malas = function() {
      if (bandera == "A") {
+         malucas[mala] = pregunta;
          mala = mala + 1;
          document.getElementById("vermalas").innerHTML = "Malas : " + mala;
+         document.getElementById("malucas").innerHTML = malucas;
          bandera = "B";
      };
  }
 
  window.onbeforeunload = function(e) {
      return '¿ Quieres salir?';
- };
+
+ }
+ 
+ function leerparrafos() {
+    const etiquetas = [
+        "",
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D",
+        "Alternativa E"
+    ];
+
+    const parrafos = document.querySelectorAll("p");
+    const frases = [];
+
+    for (let i = 0; i < 6 && i < parrafos.length; i++) {
+        const texto = parrafos[i].textContent.trim();
+        if (texto) {
+            frases.push(etiquetas[i]); // etiqueta antes
+            frases.push(texto);        // contenido del párrafo
+        }
+    }
+
+    if (frases.length === 0) {
+        alert("No hay párrafos para leer.");
+        return;
+    }
+
+    let idx = 0;
+    function leerSiguiente() {
+        if (idx >= frases.length) return;
+        let utterance = new SpeechSynthesisUtterance(frases[idx]);
+        utterance.lang = "es-ES";
+        utterance.onend = function() {
+            idx++;
+            leerSiguiente();
+        };
+        speechSynthesis.speak(utterance);
+    }
+
+    // Cancelar si ya hay algo hablando
+    speechSynthesis.cancel();
+    leerSiguiente();
+}
+
+
+function detenerlectura() {
+    speechSynthesis.cancel();
+}
+ 
+ function micheck(check) {
+    const parrafo = document.getElementById("respuesta");
+    
+   if (check.checked) {
+        
+      alert("El checkbox está ACTIVADO - Está en modo repaso, se mostrarán las respuestas✅");
+       parrafo.hidden = false;
+        
+    } else {
+       
+      alert("El checkbox está DESACTIVADO - Está en modo exámen❌");
+       parrafo.hidden = true;
+    
+           }
+  }
+   ;
