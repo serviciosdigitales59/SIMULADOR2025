@@ -8,6 +8,31 @@
 let malucas = [];
 let miCheckbox; 
 
+
+const supabaseUrl = 'TU_URL_DE_SUPABASE'
+const supabaseKey = 'TU_KEY_PUBLICA_ANON'
+const supabase = supabase.createClient(supabaseUrl, supabaseKey)
+
+// Función para iniciar sesión (reemplaza tu validación anterior)
+async function login(email, password) {
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email: email,
+    password: password,
+  })
+
+  if (error) {
+    alert("Error de acceso: " + error.message);
+  } else {
+    alert("¡Acceso concedido!");
+    // Aquí rediriges o muestras el contenido protegido
+  }
+}
+
+
+
+
+
+
  function contarLineas() {
      var textarea = document.getElementById('txtArea');
      var contenido = textarea.value;
