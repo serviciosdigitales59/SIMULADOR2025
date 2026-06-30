@@ -34,7 +34,7 @@
     </div>
     <br>
     <center>
-        <h3>Simulador para el Exámen de Ascenso PNP 2026</h3>
+        <h3>Simulador para el Exámen de Ascenso PNP 2026-IA</h3>
     </center>
 
     <div class="container-fluid" style="background-color: #c2d8e7;">
@@ -88,26 +88,11 @@
 
             </div>
         </div>
-
+        
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/logout.js"></script>
 </body>
-<script>
-    var tiempoDeInactividad = 1 * 60 * 1000; // 5 minutos en milisegundos
-
-    var tiempoInicio = new Date().getTime();
-
-    function verificarInactividad() {
-        var tiempoActual = new Date().getTime();
-        if (tiempoActual - tiempoInicio >= tiempoDeInactividad) {
-            window.close(); // Cierra la ventana actual
-        } else {
-            setTimeout(verificarInactividad, 1000); // Verifica la inactividad cada segundo
-        }
-    }
-
-    // Iniciar el control de inactividad al cargar la página
-    window.onload = function() {
-        setTimeout(verificarInactividad, 1000); // Iniciar la verificación de inactividad después de 1 segundo
-    };
-</script>
 
 </html>
