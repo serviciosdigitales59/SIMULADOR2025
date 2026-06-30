@@ -45,11 +45,11 @@
                     
                     </div>
                     <form id="loginform">
-                        <input type="text" id="username" name="usuario" placeholder="Usuario" required>
+                        <input type="text" id="usuario" name="usuario" placeholder="Usuario" required>
                         
-                        <input type="password" id="pass" placeholder="Contraseña" name="password" required>
+                        <input type="password" id="password" placeholder="Contraseña" name="password" required>
                         
-                        <button type="submit" title="Ingresar" name="Ingresar">Login</button>
+                        <button id="btnLogin" title="Ingresar" name="Ingresar">Login</button>
                     </form>
                     <div class="pie-form">
                         <a href="#">¿Perdiste tu contraseña?</a>
@@ -61,34 +61,16 @@
                 </div>
             </div>
         </div>
-            
+    
     </body>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script>
-    var usuarios = ['VALDERRAMA','TAFURG'];
-    var contraseñas = ['31389359', '31389326'];
-
-// Evento de submit del formulario
-document.getElementById('loginform').addEventListener('submit', function(event) {
-      event.preventDefault(); // Evita que el formulario se envíe
-
-      // Obtener los valores del formulario
-      var username = document.getElementById('username').value;
-      var password = document.getElementById('pass').value;
-
-      // Verificar si el nombre de usuario está en el array y obtener su índice
-      var index = usuarios.indexOf(username);
-
-      if (index !== -1 && contraseñas[index] === password) {
-        // Redireccionar a la página deseada
-        window.location.href = 'principal.html';
-      } else {
-        alert('Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.');
-      }
-    });
-
     </script>
-</html>
+    <script src="js/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
+<script src="js/supabase.js"></script>
+
+
+</html>
 
 
