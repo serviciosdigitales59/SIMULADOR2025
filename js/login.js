@@ -28,5 +28,6 @@ async function login(){
     }
 
     window.location="principal.html";
-
+document.getElementById("correo").innerHTML =
+data.user.email;
 }
