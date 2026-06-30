@@ -46,10 +46,8 @@
                     </div>
                     <form id="loginform">
                         <input type="text" id="usuario" name="usuario" placeholder="Usuario" required>
-                        
                         <input type="password" id="password" placeholder="Contraseña" name="password" required>
-                        
-                        <button id="btnLogin" title="Ingresar" name="Ingresar">Login</button>
+                        <button onclick="login()"> Ingresar </button>
                     </form>
                     <div class="pie-form">
                         <a href="#">¿Perdiste tu contraseña?</a>
@@ -61,14 +59,11 @@
                 </div>
             </div>
         </div>
-    
+       <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+       <script src="js/supabase.js"></script>
+       <script src="js/login.js"></script>
     </body>
-    <script>
-    </script>
-    <script src="js/login.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-
-<script src="js/supabase.js"></script>
+   
 
 
 </html>
