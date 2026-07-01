@@ -1,5 +1,5 @@
 async function salir(){
 
-    await supabase.auth.signOut();
+   await supabaseClient.auth.signOut();
 
     window.location="index.html";
