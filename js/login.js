@@ -11,7 +11,7 @@ async function login(){
     document.getElementById("password").value;
 
     const { data, error } =
-    await supabase.auth.signInWithPassword({
+    await supabaseClient.auth.signInWithPassword({
 
         email: email,
 
@@ -27,7 +27,6 @@ async function login(){
 
     }
 
- window.location="principal.html";
-document.getElementById("correo").innerHTML =
-data.user.email;
+    
 }
+
