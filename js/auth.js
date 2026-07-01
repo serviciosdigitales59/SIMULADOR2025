@@ -1,14 +1,15 @@
-async function verificarSesion(){
+async function verificarSesion() {
 
-    const { data } =
-    await supabase.auth.getSession();
+    const { data, error } = await supabaseClient.auth.getSession();
 
-    if(!data.session){
-
-        window.location="index.html";
-
+    if (error) {
+        console.error(error);
+        return;
     }
 
+    if (!data.session) {
+        window.location = "index.html";
+    }
 }
 
-verificarSesion()
+verificarSesion();
