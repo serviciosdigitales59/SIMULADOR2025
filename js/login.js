@@ -31,3 +31,5 @@ async function login(){
 document.getElementById("correo").innerHTML =
 data.user.email;
 }
+document.getElementById("correo").innerHTML =
+data.user.email;
